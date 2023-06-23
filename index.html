@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Евклид - проектные системы специально для вас" />
+	<meta name="keywords" content="Евклид, проект, проектные системы" />
+  <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font">
+  <link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font">
+  <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font">
+  <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font">
+  <link rel="preload" href="fonts/Montserrat-ExtraBold.woff2" as="font">
   <link rel="icon" href="img/favicon/favicon.ico">
-  <link rel="stylesheet" href="css/normalize.css" type="text/css">
-  <link rel="stylesheet" href="css/slider.css" type="text/css">
-  <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link rel="stylesheet" href="css/media.css" type="text/css">
+  <link rel="stylesheet" href="css/normalize.min.css" type="text/css">
+  <link rel="stylesheet" href="css/slider.min.css" type="text/css">
+  <link rel="stylesheet" href="css/style.min.css" type="text/css">
+  <link rel="stylesheet" href="css/media.min.css" type="text/css">
   <title>Евклид</title>
-
+  <script src="js/lazyload.min.js"></script>
+  <script defer src="js/burger.min.js"></script>
+  <script defer src="js/search.min.js"></script>
+  <script defer src="js/slider.min.js"></script>
+  <script defer src="js/steps.min.js"></script>
+  <script defer src="js/accordeon.min.js"></script>
 </head>
-
 <body>
-  <!-- Header -->
   <header id="header" class="header">
     <div class="container header__container flex">
-
-      <!-- Бургер меню -->
       <button class="btn header__nav-btn burger-button" aria-label="Окно навигации" tabindex="1">
         <svg class="header__nav-btn" width="30" height="23" viewBox="0 0 30 23" fill="transparent"
           xmlns="http://www.w3.org/2000/svg">
@@ -29,7 +35,6 @@
           <rect class="burger-line" y="20" width="30" height="3" fill="inherit" />
         </svg>
       </button>
-
       <nav class="header__nav-burger">
         <ul class="header__list-burger no-marks flex">
           <li class="header__item-burger"><a class="header__link-burger" href="#hero">О нас</a></li>
@@ -39,10 +44,6 @@
           <li class="header__item-burger"><a class="header__link-burger" href="#footer">Контакты</a></li>
         </ul>
       </nav>
-      <script src="js/burger.js"></script>
-
-
-      <!-- Меню десктоп -->
       <a class="logo-link" href="#" aria-label="Логотип. Вернуться на главную">
         <img class="logo header__logo" src="img/svg/LogoBlack.svg" alt="Евклид - проектные системы">
       </a>
@@ -55,10 +56,7 @@
             <li class="header__item"><a class="header__link" href="#faq">Отзывы</a></li>
             <li class="header__item"><a class="header__link" href="#footer">Контакты</a></li>
           </ul>
-
         </nav>
-
-
         <button class="btn header__search-link search_toggle" aria-label="Открыть строку поиска">
           <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="inherit" xmlns="http://www.w3.org/2000/svg">
             <rect class="svg" width="7.56126" height="1.89031"
@@ -68,7 +66,6 @@
               stroke="inherit" fill="transparent" stroke-width="2" />
           </svg>
         </button>
-
         <div class="header__search-field flex">
           <input class="header__search-input " placeholder="Что будем искать?">
           <button class="btn header__search-link" aria-label="Поиск">
@@ -90,12 +87,9 @@
             </svg>
           </button>
         </div>
-        <script src="js/search.js"></script>
       </div>
     </div>
   </header>
-
-  <!-- Hero -->
   <section id="hero" class="hero">
     <div class="container">
       <div class="hero__slider">
@@ -107,29 +101,35 @@
         <button class="btn hero__button button-primary">
           Заказать расчёт
         </button>
-
-
         <div class="swiper" tabindex="-1">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img class="swiper-img" src="img/slider1.jpg" alt="Слайд1">
+              <picture>
+                <source class="swiper-img" srcset="img/slider1-sm.webp"
+                        media="(max-width: 800px)">
+                <img class="swiper-img" src="img/slider1.webp" alt="Слайд 1">
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img class="swiper-img" src="img/slider2.jpg" alt="Слайд2">
+              <picture>
+                <source class="swiper-img" srcset="img/slider2-sm.webp"
+                        media="(max-width: 800px)">
+                <img class="swiper-img" src="img/slider2.webp" alt="Слайд 2">
+              </picture>
             </div>
             <div class="swiper-slide">
-              <img class="swiper-img" src="img/slider3.jpg" alt="Слайд3">
+              <picture>
+                <source class="swiper-img" srcset="img/slider3-sm.webp"
+                        media="(max-width: 800px)">
+                <img class="swiper-img" src="img/slider3.webp" alt="Слайд 3">
+              </picture>
             </div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
       </div>
     </div>
-    <script src="js/slider.js"></script>
   </section>
-
-
-  <!-- About -->
   <section id="about" class="section about">
     <div class="container">
       <h2 class="title-2 about__title-2">О нас</h2>
@@ -157,7 +157,6 @@
           </div>
         </div>
         <ul class="about__advantages no-marks flex">
-          <!-- 1 -->
           <li class="about__advantages-item about__bg-1">
             <h3 class="about__advantages-title">
               Консультация с широким активом
@@ -167,7 +166,6 @@
               для как самодостаточных, так и внешне зависимых концептуальных решений
             </p>
           </li>
-          <!-- 2 -->
           <li class="about__advantages-item about__bg-2">
             <h3 class="about__advantages-title">
               В своём стремлении повысить
@@ -181,8 +179,6 @@
       </div>
     </div>
   </section>
-
-  <!-- How -->
   <section id="how" class="section how">
     <div class="container">
       <h2 class="title-2 how__title-2">Как мы работаем</h2>
@@ -203,7 +199,6 @@
       <div class="how__step-slider flex">
         <div class="how__step-slider-block flex">
           <ul class="how__step-slider-block-list no-marks">
-            <!-- 1 -->
             <li class="how__step-slider-block-item how__step-slider-block-item--show" data-target="one">
               <h3 class="title-3 how__step-slider-title">Проводим консультацию</h3>
               <p class="text how__step-slider-text">
@@ -221,24 +216,18 @@
                 к ответу.
               </p>
             </li>
-
-            <!-- 2 -->
             <li class="how__step-slider-block-item" data-target="two">
               <h3 class="title-3 how__step-slider-title">Составляем смету</h3>
               <p class="text how__step-slider-text">
                 Внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями. А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований.
               </p>
             </li>
-
-            <!-- 3 -->
             <li class="how__step-slider-block-item" data-target="three">
               <h3 class="title-3 how__step-slider-title">Привлекаем подрядчиков</h3>
               <p class="text how__step-slider-text">
                 Идейные соображения высшего порядка, а также новая модель организационной деятельности требует анализа прогресса профессионального сообщества. Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнить важные задания по разработке прогресса профессионального сообщества.
               </p>
             </li>
-
-            <!-- 4 -->
             <li class="how__step-slider-block-item" data-target="four">
               <h3 class="title-3 how__step-slider-title">Инспектируем все этапы работ</h3>
               <p class="text how__step-slider-text">
@@ -246,32 +235,24 @@
               </p>
             </li>
           </ul>
-
           <div>
             <button class="btn how__button how__button-primary button-primary">Подробнее</button>
             <button class="btn how__button how__button-secondary button-secondary">Договор</button>
           </div>
         </div>
-
         <picture class="how__step-slider-photo">
-          <img class="how__step-slider-img how__step-slider-img--show" src="img/Block2.jpg" alt="Консультация" data-target="oneimg">
-          <img class="how__step-slider-img" src="img/Block2-1.jpg" alt="Смета" data-target="twoimg">
-          <img class="how__step-slider-img" src="img/Block2-2.jpg" alt="Подрядчики" data-target="threeimg">
-          <img class="how__step-slider-img" src="img/Block2-3.jpg" alt="Инспектируем" data-target="fourimg">
+          <img class="how__step-slider-img how__step-slider-img--show lazyload" src="img/Block2-thum.webp" data-src="img/Block2.webp" alt="Консультация"  data-target="oneimg" />
+          <img class="how__step-slider-img how__step-slider-img--show lazyload" src="img/Block2-1-thum.webp" data-src="img/Block2-1.webp" alt="Смета"  data-target="twoimg" />
+          <img class="how__step-slider-img how__step-slider-img--show lazyload" src="img/Block2-2-thum.webp" data-src="img/Block2-2.webp" alt="Подрядчики"  data-target="threeimg" />
+          <img class="how__step-slider-img how__step-slider-img--show lazyload" src="img/Block2-3-thum.webp" data-src="img/Block2-3.webp" alt="Инспектируем"  data-target="fourimg" />
         </picture>
-
       </div>
     </div>
-
-    <script src="js/steps.js"></script>
   </section>
-
-  <!-- FAQ -->
   <section id="faq" class="section faq">
     <div class="container">
       <h2 class="title-2 faq__title-2">Часто задаваемые вопросы</h2>
       <ul class="faq__list no-marks">
-        <!-- 1 -->
         <li class="faq__item">
           <div class="faq__item-head">
             <button class="faq__link btn" data-path="one">
@@ -287,7 +268,6 @@
               </svg>
             </button>
           </div>
-
           <div class="faq__item-body" data-target="oneac">
             <p class="text">
               Являясь всего лишь частью общей картины, непосредственные участники
@@ -311,7 +291,6 @@
             </p>
           </div>
         </li>
-        <!-- 2 -->
         <li class="faq__item">
           <div class="faq__item-head">
             <button class="faq__link btn" data-path="two">
@@ -336,7 +315,6 @@
             </p>
           </div>
         </li>
-        <!-- 3 -->
         <li class="faq__item">
           <div class="faq__item-head">
             <button class="faq__link btn" data-path="three">
@@ -361,7 +339,6 @@
             </p>
           </div>
         </li>
-        <!-- 4 -->
         <li class="faq__item">
           <div class="faq__item-head">
             <button class="faq__link btn" data-path="four">
@@ -386,7 +363,6 @@
             </p>
           </div>
         </li>
-        <!-- 5 -->
         <li class="faq__item">
           <div class="faq__item-head">
             <button class="faq__link btn" data-path="five">
@@ -412,15 +388,11 @@
           </div>
         </li>
       </ul>
-      <script src="js/accordeon.js"></script>
     </div>
   </section>
-
-  <!-- Footer -->
   <footer id="footer" class="footer">
     <div class="container">
       <div class="footer__wrapper flex">
-        <!-- column 1 -->
         <div class="footer__column-1 flex">
           <div class="footer__group">
             <a class="logo-link footer__logo" href="#">
@@ -462,7 +434,6 @@
             </li>
           </ul>
         </div>
-        <!-- column 2 -->
         <div class="footer__column-2">
           <h2 class="footer__title">Оставить заявку</h2>
           <form class="footer__form" method="POST" action="https://jsonplaceholder.typicode.com/posts">
@@ -472,7 +443,6 @@
             <button class="btn footer__btn button-primary" type="submit">Отправить данные</button>
           </form>
         </div>
-        <!-- column 3 -->
         <div class="footer__column-3 flex">
           <p class="text">
             Высокий уровень вовлечения представителей целевой аудитории является чётким
@@ -485,6 +455,8 @@
       </div>
     </div>
   </footer>
+  <script>
+    lazyload();
+  </script>
 </body>
-
 </html>
